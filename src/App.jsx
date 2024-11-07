@@ -1,5 +1,5 @@
 import  { useState } from 'react'
-import './index.css'
+ import './index.css'
 import dicesImage from './assets/img/dices.png';
 import Game from './Components/Game';
 

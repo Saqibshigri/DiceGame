@@ -5,7 +5,7 @@ import dice3 from '../assets/img/dice/dice3.png';
 import dice4 from '../assets/img/dice/dice4.png';
 import dice5 from '../assets/img/dice/dice5.png';
 import dice6 from '../assets/img/dice/dice6.png';
-
+import App from '../App.jsx'
 const Game = () => {
     const [counter, setCounter] = useState()
     
@@ -35,9 +35,20 @@ const Game = () => {
       }
    }
    const [dice, setDice] = useState(1)
+   const [home, setHome] = useState(false)
+   const handleHomepage = ()=>{
+        setHome(true)
+
+   }       
+   {home?   <Game/>: <App/>}
+       
   return (
  <>
+
+ 
         <h2 className="ml-[40%] mt-5 w-full font-bold text-2xl">Select A Number</h2>
+        <button onClick={handleHomepage} className=" mt-5 ml-[80%] mr-5 px-4 py-2    bg-blue-200 text-white rounded font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">  {home ? "Switch to Game" : "Switch to Home"} Homepage</button>
+
      <div className="flex flex-row justify-center items-center mt-5">
 
   {num.map((value) => (
@@ -51,6 +62,7 @@ const Game = () => {
 
  }
 </div >
+
 <div className='flex mt-5 p-5  flex-col justify-center items-center'>
 <h3>
 Click on Dice to Roll
